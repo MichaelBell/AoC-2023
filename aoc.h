@@ -53,6 +53,13 @@ const char* read_word(const char* ptr) {
     return ptr;
 }
 
+const char* read_alphanum(const char* ptr) {
+    while ((*ptr >= 'A' && *ptr <= 'Z') || (*ptr >= 'a' && *ptr <= 'z') || (*ptr >= '0' && *ptr <= '9'))
+        ++ptr;
+
+    return ptr;
+}
+
 bool check_word(const char* ptr, const char* end, const char* word) {
     while (*word && ptr < end) {
         if (*word++ != *ptr++) return false;
