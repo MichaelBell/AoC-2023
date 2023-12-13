@@ -920,7 +920,7 @@ int main()
 
     for (int i = 0; i < num_paths; ++i) {
         paths[i].steps = follow_path(0, &paths[i].cur_node);
-        printf("%lu %.3s\n", paths[i].steps, nodes[paths[i].cur_node].name);
+        printf("%llu %.3s\n", paths[i].steps, nodes[paths[i].cur_node].name);
         paths[i].cur_node = node_to_end[paths[i].cur_node];
     }
 
@@ -936,7 +936,7 @@ int main()
         printf("%d\n", end_routes[i].steps / num_turns);
         sum *= end_routes[i].steps / num_turns;
     }
-    printf("%lu\n", sum*307);
+    printf("%llu\n", sum*307);
 
     return 0;
 }

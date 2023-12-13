@@ -6,10 +6,13 @@
 
 const char* read_num(const char* ptr, int* num) {
     *num = 0;
+    bool negate = *ptr == '-';
+    if (negate) ++ptr;
     while (*ptr >= '0' && *ptr <= '9') {
         *num *= 10;
         *num += *ptr++ - '0';
     }
+    if (negate) *num = -*num;
 
     return ptr;
 }

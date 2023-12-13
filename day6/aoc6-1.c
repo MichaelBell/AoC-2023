@@ -18,31 +18,6 @@ typedef struct {
 race_t races[MAX_RACES];
 int num_races = 0;
 
-// Returns floor(sqrt(n))
-uint32_t isqrt(uint32_t n) {
-    uint32_t lo = 1;
-    uint32_t hi = n;
-    uint32_t mid = (lo + hi) >> 1;
-    if (mid > 0xFFFF) mid = 0xFFFF;
-
-    while (lo <= hi) {
-        uint32_t midsq = mid*mid;
-        if (midsq == n) return mid;
-        if (midsq < n) {
-            lo = mid + 1;
-        }
-        else {
-            hi = mid - 1;
-        }
-        mid = (lo + hi) >> 1;
-    }
-
-    if (lo > hi) {
-        if (hi*hi > n) return hi - 1;
-        else return hi;
-    }
-}
-
 int main()
 {
     const char* ptr = data;

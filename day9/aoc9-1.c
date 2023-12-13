@@ -246,7 +246,7 @@ int main()
         sum += ends[0];
     }
 
-    printf("\n%ld\n", sum);
+    printf("\n%lld\n", sum);
 
     return 0;
 }
