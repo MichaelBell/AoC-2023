@@ -1,4 +1,4 @@
-NAME=aoc17-1
+NAME=aoc17-2
 
 NANOV_SDK=../../nanoV-sdk
 
